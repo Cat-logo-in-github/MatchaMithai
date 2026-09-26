@@ -3,8 +3,8 @@ import { Link } from "react-router-dom"
 import { sweets } from "../data/recipes"
 import { Placeholder } from "../components/Placeholder"
 
-const featuredIds = [1, 2, 4, 8]
-const schemes = ["matcha", "blush", "cream", "wine"] as const
+const featuredIds = [1, 5, 4, 8]
+const schemes = ["matcha", "bark", "cream", "wine"] as const
 
 export function FeaturedSweets() {
   const items = featuredIds
