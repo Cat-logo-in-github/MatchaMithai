@@ -31,7 +31,7 @@ export const sweets: Sweet[] = [
   },
   {
     id: 2,
-    name: "Misu",
+    name: "Matcha Chocolate Barks",
     serving: "1 cup · 127 g",
     status: "sold",
     category: "Signature Line",
