@@ -31,15 +31,15 @@ export function Testimonials() {
             <div className="relative rounded-[2rem] p-2.5 bg-gradient-to-br from-gold/50 via-wine-light/40 to-gold/30 shadow-[0_25px_70px_-20px_rgba(0,0,0,0.6)]">
               <div className="rounded-[1.6rem] overflow-hidden bg-black relative">
                 <video
-                  className="w-full aspect-[4/5] object-cover opacity-95"
-                  src="/media/testimonial-placeholder.mp4"
-                  poster="/media/testimonial-poster.jpg"
+                  className="w-full aspect-[9/16] object-cover opacity-95"
+                  src={`${import.meta.env.BASE_URL}media/testimonial.mp4`}
+                  poster={`${import.meta.env.BASE_URL}media/testimonial-real-poster.jpg`}
                   autoPlay
                   loop
                   muted
                   playsInline
                   controls
-                  aria-label="Customer testimonial video placeholder"
+                  aria-label="Customer testimonial video"
                 />
                 <div className="pointer-events-none absolute inset-0 shadow-[inset_0_0_60px_25px_rgba(0,0,0,0.5)]" />
               </div>

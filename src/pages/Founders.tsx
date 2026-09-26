@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { PageWrapper } from "../components/PageWrapper"
-import { Placeholder } from "../components/Placeholder"
 import { Star, Flower, Heart } from "../components/Doodles"
 import { founders } from "../data/founders"
 
 const stickers = [Star, Flower, Heart, Star]
 const folderRotations = [-4, 3, -2, 4]
 const folderColors = ["bg-[#f2e2c4]", "bg-[#e6ecd2]", "bg-[#f2e2c4]", "bg-[#e6ecd2]"]
+
+function photoUrl(path: string) {
+  return `${import.meta.env.BASE_URL}${path}`
+}
 
 export function Founders() {
   const [openId, setOpenId] = useState<string | null>(null)
@@ -59,10 +62,14 @@ export function Founders() {
                   >
                     <Sticker className="w-7 h-7 text-wine/70 self-end -mt-1 -mr-1" />
                     <div className="flex-1 flex items-center justify-center">
-                      <span className="font-heavy text-3xl sm:text-4xl text-forest/80">
-                        {f.name.split(" ")[0][0]}
-                        {f.name.split(" ")[1]?.[0]}
-                      </span>
+                      <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-paper shadow-soft rotate-2">
+                        <img
+                          src={photoUrl(f.photo)}
+                          alt={`Photo of ${f.name}`}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                        />
+                      </div>
                     </div>
                     <div>
                       <p className="font-display italic text-lg text-ink leading-tight">
@@ -109,12 +116,13 @@ export function Founders() {
                 ✕
               </button>
 
-              <Placeholder
-                scheme={active.id === "manya" ? "wine" : "matcha"}
-                icon="flower"
-                label={active.name}
-                className="rounded-2xl aspect-square sm:aspect-auto sm:h-full"
-              />
+              <div className="rounded-2xl overflow-hidden aspect-square sm:aspect-auto sm:h-full bg-cream-dark">
+                <img
+                  src={photoUrl(active.photo)}
+                  alt={`Photo of ${active.name}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
               <div>
                 <h2 className="font-display italic text-3xl text-forest mb-1">{active.name}</h2>

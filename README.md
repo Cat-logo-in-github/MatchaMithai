@@ -19,21 +19,31 @@ React Router.
 - **Order Now** (`/order`) — on-brand "coming soon" ordering state.
 - **Pick Your Sweet** (`/pick-your-sweet`) — a playful personality quiz that
   reveals a matching sweet from the catalogue.
-- **Testimonials** (`/testimonials`) — night-bakery themed video testimonial.
+- **Testimonials** (`/testimonials`) — night-bakery themed page with the real
+  customer testimonial video.
 - **Gallery** (`/gallery`) — editorial masonry of 9 placeholder shots.
+
+## Deploying
+
+See **[DEPLOY.md](./DEPLOY.md)** — a GitHub Actions workflow
+(`.github/workflows/deploy.yml`) is already included and will deploy to
+GitHub Pages automatically on every push to `main` (just flip one setting in
+the repo). A manual `npm run deploy` fallback is also available.
 
 ## Content sources
 
 - `src/data/recipes.ts` — transcribed verbatim from the supplied recipe book
   PDF (names, servings, ingredients in grams).
 - `src/data/founders.ts` — founder bios transcribed from the website brief
-  (Manya Jindal uses a placeholder, as no bio was supplied).
+  (Manya Jindal uses a placeholder, as no bio was supplied), pointing at the
+  real photos in `public/founders/`.
 - `src/data/contact.ts` — phone numbers, emails and address from the brief.
-- Placeholder imagery is generated in-app (`src/components/Placeholder.tsx`,
-  `src/components/Doodles.tsx`) rather than stock photography, so it can be
-  swapped for real photography later without touching layout.
-- `public/media/testimonial-placeholder.mp4` — a generated placeholder video
-  (see `public/media` — replace with the real testimonial video when ready).
+- `public/media/testimonial.mp4` — the real testimonial video, with a poster
+  frame (`testimonial-real-poster.jpg`) generated from it.
+- Sweet/gallery placeholder imagery is generated in-app
+  (`src/components/Placeholder.tsx`, `src/components/Doodles.tsx`) rather
+  than stock photography, so it can be swapped for real food photography
+  later without touching layout.
 
 ## Getting started
 
@@ -41,8 +51,9 @@ React Router.
 npm install
 npm run dev      # start the dev server
 npm run build    # type-check + production build
-npm run lint      # oxlint
+npm run lint     # oxlint
 npm run preview  # preview the production build
+npm run deploy   # manual deploy to GitHub Pages (gh-pages branch)
 ```
 
 ## Notes
@@ -53,3 +64,6 @@ npm run preview  # preview the production build
 - Framer Motion respects the visitor's OS-level "reduce motion" setting via
   `MotionConfig`; decorative CSS animations also pause under
   `prefers-reduced-motion`.
+- Routing uses `HashRouter` and Vite's `base: './'` specifically so the site
+  works unmodified on GitHub Pages, at any repo name/sub-path, including on
+  refresh/deep-link. See DEPLOY.md for the reasoning.
