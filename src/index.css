@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Brand palette (from logo + recipe book + BMC references) ---- */
+  --color-cream: #faf5e9;
+  --color-cream-dark: #f1e6cf;
+  --color-paper: #fffdf8;
+
+  --color-ink: #211c14;
+  --color-ink-soft: #362e21;
+
+  --color-forest: #223616;
+  --color-forest-light: #3a5424;
+  --color-forest-dark: #16220e;
+
+  --color-matcha: #8ea84a;
+  --color-matcha-light: #b9cd85;
+  --color-matcha-deep: #6b8339;
+
+  --color-blush: #f4d7de;
+  --color-blush-deep: #e3aab8;
+
+  --color-wine: #3f1620;
+  --color-wine-light: #6b2635;
+  --color-wine-deep: #290e15;
+
+  --color-gold: #d8b87f;
+  --color-gold-light: #ecdcb8;
+
+  /* ---- Fonts ---- */
+  --font-display: "Fraunces", "Iowan Old Style", serif;
+  --font-heavy: "Poppins", "Arial Black", sans-serif;
+  --font-script: "Caveat", cursive;
+  --font-sans: "Work Sans", system-ui, sans-serif;
+
+  --shadow-soft: 0 10px 40px -12px rgba(33, 28, 20, 0.25);
+
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-spin-slow: spin 14s linear infinite;
+  --animate-drip: drip 3.2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(var(--tw-rotate, 0)); }
+  50% { transform: translateY(-14px) rotate(var(--tw-rotate, 0)); }
+}
+
+@keyframes wobble {
+  0%, 100% { border-radius: 48% 52% 43% 57% / 57% 44% 56% 43%; }
+  33% { border-radius: 42% 58% 58% 42% / 44% 58% 42% 56%; }
+  66% { border-radius: 58% 42% 48% 52% / 50% 56% 44% 50%; }
+}
+.animate-wobble {
+  animation: wobble 7s ease-in-out infinite;
+}
+
+@keyframes swirl-spin {
+  to { transform: rotate(360deg); }
+}
+.animate-swirl {
+  animation: swirl-spin 10s linear infinite;
+}
+
+@keyframes drip {
+  0% { transform: translateY(0) scaleY(1); opacity: 1; }
+  80% { transform: translateY(140px) scaleY(1.4); opacity: 0.9; }
+  100% { transform: translateY(160px) scaleY(0.6); opacity: 0; }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-matcha);
+  color: var(--color-paper);
+}
+
+/* subtle grain / paper texture overlay used across the site */
+.grain {
+  position: relative;
+  isolation: isolate;
+}
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  z-index: 5;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 140px 140px;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.divider-diamond {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.divider-diamond::before,
+.divider-diamond::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: currentColor;
+  opacity: 0.35;
+}
+
+/* Custom scrollbar to feel bespoke rather than default browser chrome */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-matcha-deep);
+  border-radius: 999px;
+  border: 2px solid var(--color-cream);
+}
