@@ -22,7 +22,7 @@ export const founders: Founder[] = [
   {
     id: "aneesh",
     name: "Aneesh Dasgupta",
-    role: "Member, Events & Collaborations",
+    role: "Founder",
     bio: "I'm currently pursuing Economics & Finance at Ashoka University. Professionally, I'm currently working across business analysis, financial analysis, strategy, and research-focused roles. My experience includes quantitative policy analysis with Axis Bank Foundation, regulatory and macroeconomic analysis with Power Legal Advisors, growth and product strategy in the Founder's Office at Zyber, and research-driven consulting through various organizations at Ashoka University.",
     placeholder: false,
     photo: "founders/aneesh.jpg",
