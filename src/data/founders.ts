@@ -31,7 +31,7 @@ export const founders: Founder[] = [
     id: "manya",
     name: "Manya Jindal",
     role: "Head Pâtissier",
-    bio: "Biography coming soon — Manya is still deciding which stories from the test kitchen are safe to share.",
+    bio: "I’m a 3rd-year Economics and Public Policy student and a co-founder of Matcha Mithai I’ve loved baking since I was 10, and over the years, that love has grown into a fascination with food, culture, and the little ways we can reimagine the familiar. I’ve always been drawn to things that feel rooted in tradition but come with a little bit of modern twist...unexpected, playful, and just a little quirky. Whether it’s experimenting in the kitchen, discovering fun new ideas, or finding unconventional ways to bring people together, I love creating things that feel both familiar and fresh. Matcha Mithai is, in many ways, a reflection of that, taking something deeply rooted in our culture and giving it a contemporary twist.",
     placeholder: true,
     photo: "founders/manya.jpg",
   },
