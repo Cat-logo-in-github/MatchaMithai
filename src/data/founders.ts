@@ -43,4 +43,12 @@ export const founders: Founder[] = [
     placeholder: false,
     photo: "founders/shreya.jpg",
   },
+  {
+    id: "parshwa",
+    name: "Parshwa",
+    role: "Member",
+    bio: "Enthusiastic and versatile upcoming third year university CS student with a passion for learning, digital creation, and communication. A passionate performer with experience in oration, acting, performing, anchoring, writing and music creation. A developing interest in Physics and Psychology that compliments his CS understanding. Experienced in leading projects, organizing events, and engaging in cross-disciplinary academic pursuits. Proficient in multiple languages and driven by a desire to break language and cultural barriers through innovation and dialogue.",
+    placeholder: false,
+    photo: "founders/parshwa.jpg",
+  },
 ]

@@ -103,6 +103,39 @@ export function Whisk({ className = "" }: DoodleProps) {
   )
 }
 
+export function Cookie({ className = "" }: DoodleProps) {
+  return (
+    <svg viewBox="0 0 60 60" fill="none" className={className} aria-hidden="true" focusable="false">
+      <circle cx="30" cy="30" r="26" fill="currentColor" />
+      <circle cx="20" cy="22" r="3" fill="var(--color-wine)" opacity="0.6" />
+      <circle cx="34" cy="18" r="2.4" fill="var(--color-wine)" opacity="0.6" />
+      <circle cx="40" cy="32" r="3" fill="var(--color-wine)" opacity="0.6" />
+      <circle cx="24" cy="38" r="2.6" fill="var(--color-wine)" opacity="0.6" />
+      <circle cx="16" cy="34" r="2" fill="var(--color-wine)" opacity="0.6" />
+    </svg>
+  )
+}
+
+export function Cup({ className = "" }: DoodleProps) {
+  return (
+    <svg viewBox="0 0 60 60" fill="none" className={className} aria-hidden="true" focusable="false">
+      <path
+        d="M12 22H42V38C42 45 36.6 50 30 50H24C17.4 50 12 45 12 38V22Z"
+        fill="currentColor"
+      />
+      <path
+        d="M42 26H47C50 26 52 28.5 52 31.5C52 34.5 50 37 47 37H42"
+        stroke="currentColor"
+        strokeWidth="3"
+        fill="none"
+        strokeLinecap="round"
+      />
+      <path d="M18 16C18 12 22 12 22 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.7" />
+      <path d="M28 16C28 12 32 12 32 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.7" />
+    </svg>
+  )
+}
+
 export function Blob({ className = "", style }: DoodleProps) {
   return (
     <svg viewBox="0 0 200 200" className={className} style={style} aria-hidden="true" focusable="false">

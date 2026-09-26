@@ -67,6 +67,28 @@
   100% { transform: translateY(160px) scaleY(0.6); opacity: 0; }
 }
 
+/* A short stream of droplets that "pours" from the bowl toward the finished
+   sweet, timed to a 6s cycle so it appears right as the mousse reveals. */
+@keyframes pour {
+  0%, 50% { opacity: 0; transform: translate(0, 0) scale(0.5); }
+  58% { opacity: 1; transform: translate(18px, 16px) scale(0.85); }
+  76% { opacity: 1; transform: translate(60px, 58px) scale(0.65); }
+  92%, 100% { opacity: 0; transform: translate(104px, 98px) scale(0.3); }
+}
+.animate-pour {
+  animation: pour 6s ease-in-out infinite;
+}
+
+@keyframes sparkle-pop {
+  0%, 68% { opacity: 0; transform: scale(0.4) rotate(0deg); }
+  76% { opacity: 1; transform: scale(1.15) rotate(12deg); }
+  88% { opacity: 1; transform: scale(1) rotate(-6deg); }
+  96%, 100% { opacity: 0; transform: scale(0.6) rotate(0deg); }
+}
+.animate-sparkle {
+  animation: sparkle-pop 6s ease-in-out infinite;
+}
+
 html {
   scroll-behavior: smooth;
 }

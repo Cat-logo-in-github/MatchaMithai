@@ -4,9 +4,15 @@ import { PageWrapper } from "../components/PageWrapper"
 import { Star, Flower, Heart } from "../components/Doodles"
 import { founders } from "../data/founders"
 
-const stickers = [Star, Flower, Heart, Star]
-const folderRotations = [-4, 3, -2, 4]
-const folderColors = ["bg-[#f2e2c4]", "bg-[#e6ecd2]", "bg-[#f2e2c4]", "bg-[#e6ecd2]"]
+const stickers = [Star, Flower, Heart, Star, Flower]
+const folderRotations = [-4, 3, -2, 4, -3]
+const folderColors = [
+  "bg-[#f2e2c4]",
+  "bg-[#e6ecd2]",
+  "bg-[#f2e2c4]",
+  "bg-[#e6ecd2]",
+  "bg-[#f0d9c8]",
+]
 
 function photoUrl(path: string) {
   return `${import.meta.env.BASE_URL}${path}`
@@ -27,7 +33,7 @@ export function Founders() {
   return (
     <PageWrapper>
       <section className="relative min-h-[80vh] bg-matcha-light/20 py-20 sm:py-28 overflow-hidden grain">
-        <div className="max-w-5xl mx-auto px-5 sm:px-8">
+        <div className="max-w-6xl mx-auto px-5 sm:px-8">
           <div className="text-center mb-6">
             <p className="font-script text-2xl text-matcha-deep mb-1">find out who's behind the biz</p>
             <h1 className="font-display italic text-4xl sm:text-6xl text-ink text-balance">
@@ -38,7 +44,7 @@ export function Founders() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 mt-14">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8 mt-14">
             {founders.map((f, i) => {
               const Sticker = stickers[i % stickers.length]
               return (
@@ -47,7 +53,7 @@ export function Founders() {
                   type="button"
                   onClick={() => setOpenId(f.id)}
                   initial={{ opacity: 0, y: 30, rotate: 0 }}
-                  whileInView={{ opacity: 1, y: 0, rotate: folderRotations[i] }}
+                  whileInView={{ opacity: 1, y: 0, rotate: folderRotations[i % folderRotations.length] }}
                   viewport={{ once: true, margin: "-40px" }}
                   whileHover={{ rotate: 0, y: -10, scale: 1.04 }}
                   whileTap={{ scale: 0.97 }}
@@ -56,9 +62,9 @@ export function Founders() {
                   aria-label={`Open ${f.name}'s profile`}
                 >
                   {/* folder tab */}
-                  <div className={`absolute -top-3 left-5 w-16 h-4 rounded-t-md ${folderColors[i]} border border-black/5`} />
+                  <div className={`absolute -top-3 left-5 w-16 h-4 rounded-t-md ${folderColors[i % folderColors.length]} border border-black/5`} />
                   <div
-                    className={`relative rounded-2xl rounded-tl-none ${folderColors[i]} shadow-soft aspect-[3/4] p-4 flex flex-col justify-between border border-black/5`}
+                    className={`relative rounded-2xl rounded-tl-none ${folderColors[i % folderColors.length]} shadow-soft aspect-[3/4] p-4 flex flex-col justify-between border border-black/5`}
                   >
                     <Sticker className="w-7 h-7 text-wine/70 self-end -mt-1 -mr-1" />
                     <div className="flex-1 flex items-center justify-center">

@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 import { useState } from "react"
 import { sweets, categoryOrder, categoryTagline, type Sweet } from "../data/recipes"
 import { Placeholder } from "../components/Placeholder"
-import { Leaf, Star } from "../components/Doodles"
+import { Leaf, Star, Cookie, Cup } from "../components/Doodles"
 import { PageWrapper } from "../components/PageWrapper"
 
 const categorySchemes: Record<Sweet["category"], { bg: string; card: string; accent: string; ph: "matcha" | "wine" | "forest" | "cream" }> = {
@@ -75,8 +75,10 @@ export function Catalogue() {
 
   return (
     <PageWrapper>
-      <section className="bg-cream pt-6 pb-14 sm:pt-10">
-        <div className="max-w-3xl mx-auto px-5 sm:px-8 text-center">
+      <section className="relative bg-cream pt-6 pb-14 sm:pt-10 overflow-hidden">
+        <Cookie className="absolute top-10 left-[6%] w-9 h-9 text-ink-soft/20 -rotate-6 animate-float hidden sm:block" />
+        <Cup className="absolute bottom-6 right-[8%] w-10 h-10 text-forest/20 rotate-3 animate-float hidden sm:block" style={{ animationDelay: "0.7s" }} />
+        <div className="max-w-3xl mx-auto px-5 sm:px-8 text-center relative z-10">
           <p className="font-script text-2xl text-matcha-deep mb-1">the recipe book, digitised</p>
           <h1 className="font-display italic text-4xl sm:text-6xl text-ink mb-4 text-balance">
             Catalogue

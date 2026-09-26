@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import { PageWrapper } from "../components/PageWrapper"
 import { Placeholder } from "../components/Placeholder"
+import { Cookie, Cup, Leaf } from "../components/Doodles"
 
 type Tile = {
   span: string
@@ -25,8 +26,17 @@ const tiles: Tile[] = [
 export function Gallery() {
   return (
     <PageWrapper>
-      <section className="bg-cream py-20 sm:py-28">
-        <div className="max-w-3xl mx-auto px-5 sm:px-8 text-center mb-14">
+      <section className="relative bg-cream py-20 sm:py-28 overflow-hidden">
+        {/* ambient bakery-toned wash: forest green + warm cocoa brown */}
+        <div className="pointer-events-none absolute -top-16 -left-16 w-72 h-72 rounded-full bg-forest/10 blur-3xl" />
+        <div className="pointer-events-none absolute top-1/3 -right-24 w-80 h-80 rounded-full bg-gold/20 blur-3xl" />
+        <div className="pointer-events-none absolute bottom-0 left-1/4 w-64 h-64 rounded-full bg-ink-soft/5 blur-3xl" />
+
+        <Leaf className="absolute top-16 left-[8%] w-10 h-10 text-forest/25 -rotate-12 animate-float hidden sm:block" />
+        <Cookie className="absolute top-24 right-[10%] w-9 h-9 text-ink-soft/25 animate-float hidden sm:block" style={{ animationDelay: "0.5s" }} />
+        <Cup className="absolute bottom-10 left-[12%] w-10 h-10 text-ink-soft/20 rotate-6 animate-float hidden sm:block" style={{ animationDelay: "1s" }} />
+
+        <div className="max-w-3xl mx-auto px-5 sm:px-8 text-center mb-14 relative z-10">
           <p className="font-script text-2xl text-matcha-deep mb-1">a peek behind the counter</p>
           <h1 className="font-display italic text-4xl sm:text-6xl text-ink text-balance">Gallery</h1>
           <p className="mt-4 text-ink-soft/70">
@@ -34,7 +44,7 @@ export function Gallery() {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto px-5 sm:px-8">
+        <div className="max-w-6xl mx-auto px-5 sm:px-8 relative z-10">
           <div className="grid grid-cols-4 sm:grid-cols-6 auto-rows-[110px] sm:auto-rows-[130px] gap-4 sm:gap-5">
             {tiles.map((t, i) => (
               <motion.div
