@@ -10,16 +10,16 @@ const testimonials = [
     video: "media/testimonial-1.mp4",
     poster: "media/testimonial-1-poster.jpg",
     quote:
-      "“We ordered the Cloud Mousse for a dinner party and it disappeared before dessert was even announced. This doesn't taste like a student side-project — it tastes like it belongs in a gift box.”",
-    attribution: "— a regular from our Instagram drops",
+      "“Wow! how did you make this?”",
+    attribution: "— definately not one of our founders",
   },
   {
     id: "t2",
     video: "media/testimonial-2.mp4",
     poster: "media/testimonial-2-poster.jpg",
     quote:
-      "“The Kaju Katli box was gone within the hour at our office Diwali party — people kept asking where we'd ‘really’ bought it from. Matcha and mithai should not work this well together, but it does.”",
-    attribution: "— a corporate gifting order, repeat customer",
+      "“Surprisingly Tasty.”",
+    attribution: "— an unassuming customer trying our order the first time",
   },
 ]
 
