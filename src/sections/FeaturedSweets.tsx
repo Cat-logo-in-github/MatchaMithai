@@ -4,7 +4,7 @@ import { sweets } from "../data/recipes"
 import { Placeholder } from "../components/Placeholder"
 
 const featuredIds = [1, 5, 4, 8]
-const schemes = ["matcha", "bark", "cream", "wine"] as const
+const schemes = ["matcha", "blush", "cream", "wine"] as const
 
 export function FeaturedSweets() {
   const items = featuredIds
